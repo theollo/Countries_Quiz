@@ -1,7 +1,12 @@
-const CountriesList = () => {
+import Country from "./Country";
+
+const CountriesList = ({countries}) => {
+    const countryComponents = Object.values(countries).map((country) => {
+        return <Country country={country} />
+    });
     return ( 
         <>
-        <h1>This is CountriesList</h1>
+        {countryComponents}
         </>
         
      );

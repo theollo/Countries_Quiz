@@ -1,4 +1,6 @@
 import {useEffect, useState} from "react";
+import Country from "../Components/Country";
+import CountriesList from "../Components/CountriesList";
  
 const SERVER_URL = "http://localhost:8080";
 const ContinentContainer=() => {
@@ -18,13 +20,13 @@ useEffect(() => {
 
 }, []);
 
-   
+console.log({countries});
     
 
 
     return ( 
         <>
-        {countries}
+        <CountriesList countries = {countries}/>
         </>
         
 
