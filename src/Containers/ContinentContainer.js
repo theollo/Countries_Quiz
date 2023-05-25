@@ -14,9 +14,9 @@ useEffect(() => {
     .then((response)=> response.json())
     .then((response)=> setCountries(response))
 
-    fetch(`${SERVER_URL}/games`)
-    .then((response)=> response.json())
-    .then((response)=> setGames(response))
+    // fetch(`${SERVER_URL}/games`)
+    // .then((response)=> response.json())
+    // .then((response)=> setGames(response))
 
 }, []);
 
