@@ -9,10 +9,10 @@ const ContinentContainer=() => {
     const [guessedCountries, setGuessedCountries] = useState([]);
     const [games, setGames] = useState(null);
 
+
     const getAllCountries = async () => {
         const response = await fetch("http://localhost:8080/countries");
         const data = await response.json();
-        console.log("From container", data)
         setCountries(data);
     }
 
