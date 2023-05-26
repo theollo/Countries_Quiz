@@ -9,10 +9,6 @@ function App() {
   return (
     <>
     <ContinentContainer/>
-    <ContinentsList/>
-    <CountriesList/>
-    <Continent/>
-    <Country/>
     </>
   );
 }

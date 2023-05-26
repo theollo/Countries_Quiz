@@ -1,12 +1,14 @@
 import Country from "./Country";
 
 const CountriesList = ({countries}) => {
-    const countryComponents = Object.values(countries).map((country) => {
-        return <Country country={country} />
-    });
+    const countryComponents = countries.map((country) => <Country country={country} />);
+    
+
+
+
     return ( 
         <>
-        {countryComponents}
+            {countryComponents}
         </>
         
      );
