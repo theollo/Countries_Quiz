@@ -1,37 +1,33 @@
 import { useState } from "react";
+import Reply from "./Reply";
 
-const PlayerForm = ({createPlayer}) => {
-    const [newPlayerName, setNewPlayerName]= useState("");
+const PlayerForm = ({ createPlayer, createNewGame, reply }) => {
+  const [newPlayerName, setNewPlayerName] = useState("");
 
-    
-    const handleChange = (event) => {
-        setNewPlayerName(event.target.value);
-    }
+  const handleChange = (event) => {
+    setNewPlayerName(event.target.value);
+  };
 
-    const handleFormSubmit =(event) => {
-        event.preventDefault();
-        createPlayer(newPlayerName);
-    }
-    
-    
-    return (  
-        <>
-        
+  const handleFormSubmit = (event) => {
+    event.preventDefault();
+    createNewGame(newPlayerName);
+  };
 
-        
-     <form onSubmit={handleFormSubmit}>
+  return (
+    <>
+      <form onSubmit={handleFormSubmit}>
         <input
-        type="text"
-        name="name"
-        placeholder="Enter Username"
-        value={newPlayerName}
-        onChange={handleChange}
+          type="text"
+          name="name"
+          placeholder="Enter Username"
+          value={newPlayerName}
+          onChange={handleChange}
         />
         <button type="submit">Create new player</button>
-    </form>
-        
-        </>
-    );
-}
- 
+      </form>
+      <Reply reply={reply} />
+    </>
+  );
+};
+
 export default PlayerForm;

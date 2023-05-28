@@ -1,9 +1,18 @@
-const Reply = (reply) => {
-    return ( 
-       <>
-<h1>This is reply</h1>
-       </> 
-     );
-}
- 
-export default reply;
+const Reply = ({ reply }) => {
+
+// Error handling as reply starts as null when program is run.
+       if (!reply) {
+              return null; 
+            }
+
+  return (
+    <>
+      <p>{reply.message}?</p>
+      <p>Max Score: {reply.maxScore}</p>
+      <p>Penalty: {reply.penalty}</p>
+      
+    </>
+  );
+};
+
+export default Reply;
