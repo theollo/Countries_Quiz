@@ -2,10 +2,10 @@ import { useState, useEffect } from "react";
 import Reply from "./Reply";
 
 const SERVER_URL = "http://localhost:8080";
-const PlayerForm = ({ createPlayer, createNewGame, reply,makeAGuess}) => {
+const PlayerForm = ({ resetAll, resetGame, resetPlayer, createNewGame, reply, makeAGuess}) => {
   const [newPlayerName, setNewPlayerName] = useState("");
   const [guess, setGuess]=useState("");
-  const [game, setGame]=useState("");
+  const [gameReset, setGameReset] = useState(false)
 
   const handleChange = (event) => {
     setNewPlayerName(event.target.value);
@@ -13,38 +13,33 @@ const PlayerForm = ({ createPlayer, createNewGame, reply,makeAGuess}) => {
 const handleGuessChange = (event)=>{
   setGuess(event.target.value);
 }
+
+
+
 const handleResetGame = (event)=>{
-  resetPlayer();
-    resetGame();
+  resetAll();
 }
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
     createNewGame(newPlayerName);
   };
-  const handleGuess = (event) => {
+  const handleGuessSumbit = (event) => {
     event.preventDefault();
     makeAGuess(guess);
   };
-  const resetPlayer = () =>{
-   fetch(`${SERVER_URL}/players/1`,{
-    method:"DELETE",
-    headers:{"Content-Type": "application/json"}
-  })
-}
-  const resetGame = () =>{
-   fetch(`${SERVER_URL}/games/1`,{
-    method:"DELETE",
-    headers:{"Content-Type": "application/json"}
-  })
-}
-
-
-  
-  useEffect(()=> {
-    
-    console.log("Hi")
-   },[]);
+//   const resetPlayer = () =>{
+//    fetch(`${SERVER_URL}/players/1`,{
+//     method:"DELETE",
+//     headers:{"Content-Type": "application/json"}
+//   })
+// }
+//   const resetGame = () =>{
+//    fetch(`${SERVER_URL}/games/1`,{
+//     method:"DELETE",
+//     headers:{"Content-Type": "application/json"}
+//   })
+// }
 
   return (
     <>
@@ -66,7 +61,7 @@ const handleResetGame = (event)=>{
           value = {guess}
           onChange={handleGuessChange}/>
           <button onClick = {handleResetGame}>Reset Game</button>
-          <button onClick={handleGuess}>Submit your guess</button>
+          <button onClick={handleGuessSumbit}>Submit your guess</button>
         
       </form>
       <Reply reply={reply} />
