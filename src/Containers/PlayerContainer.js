@@ -11,17 +11,29 @@ const PlayerContainer = () => {
   const [continent, setContinent] = useState([]);
   const [playerId, setPlayerId] = useState(null);
 
-  const createPlayer = (newPlayerName) => {
-    fetch(`${SERVER_URL}/players`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ name: newPlayerName }),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        setPlayers([...players, data]);
-      });
-  };
+  // const createPlayer = (newPlayerName) => {
+  //   fetch(`${SERVER_URL}/players`, {
+  //     method: "POST",
+  //     headers: { "Content-Type": "application/json" },
+  //     body: JSON.stringify({ name: newPlayerName }),
+  //   })
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       setPlayers([...players, data]);
+  //     });
+  // };
+
+  const makeAGuess = async (guess) => {
+    const response = await fetch(`${SERVER_URL}/games/1`,{
+    method : "PUT",
+    headers: {
+      "Content-Type" : "application/json"
+    },
+    body: JSON.stringify({countryName: guess})
+  })
+  const guessData = await response.json();
+  setReply(guessData);
+  }
   // console.log(players);
 
   // const createNewGame = (player) => {
@@ -57,7 +69,7 @@ const PlayerContainer = () => {
         body: JSON.stringify({ name: newPlayerName }),
       });
       const player = await createNewPlayer.json();
-      setPlayers([...players, player]);
+      
 
       // Step 2: Create a new game for the player
       const createGameResponse = await fetch(
@@ -70,6 +82,11 @@ const PlayerContainer = () => {
       );
       const replyObj = await createGameResponse.json();
       setReply(replyObj);
+      const updatedPlayerResponse = await fetch(
+        `${SERVER_URL}/players/${player.id}`
+      )
+      const updatedPlayer = await updatedPlayerResponse.json();
+      setPlayers([...players,updatedPlayer])
       console.log(replyObj);
   };
 
@@ -77,9 +94,9 @@ const PlayerContainer = () => {
     <>
       <Game createNewGame={createNewGame} />
       <PlayerForm
-        createPlayer={createPlayer}
         createNewGame={createNewGame}
         reply={reply}
+        makeAGuess = {makeAGuess}
       />
     </>
   );

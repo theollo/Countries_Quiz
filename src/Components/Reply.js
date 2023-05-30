@@ -11,6 +11,7 @@ const Reply = ({ reply }) => {
       <p>Max Score: {reply.maxScore}</p>
       <p>Penalty: {reply.penalty}</p>
       
+      <p>Current Score: {reply.currentScore}</p>
     </>
   );
 };
