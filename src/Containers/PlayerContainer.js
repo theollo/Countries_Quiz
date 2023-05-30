@@ -6,10 +6,23 @@ const SERVER_URL = "http://localhost:8080";
 
 const PlayerContainer = () => {
   const [players, setPlayers] = useState([]);
-  const [game, setGame] = useState([]);
+  const [game, setGame] = useState({});
   const [reply, setReply] = useState(null);
   const [continent, setContinent] = useState([]);
   const [playerId, setPlayerId] = useState(null);
+  const [games, setGames] = useState([])
+
+  const getAllPlayers = async () =>{
+    const response = await fetch(`${SERVER_URL}/players`)
+    const allPlayers = await response.json();
+    setPlayers(allPlayers);
+  }
+  const getLatestGame = async () =>{
+    const response = await fetch(`${SERVER_URL}/games`)
+    const allGames = await response.json();
+    const currentGame = allGames[0];
+    setGame(currentGame);
+  }
 
   // const createPlayer = (newPlayerName) => {
   //   fetch(`${SERVER_URL}/players`, {
@@ -24,13 +37,14 @@ const PlayerContainer = () => {
   // };
 
   const makeAGuess = async (guess) => {
-    const response = await fetch(`${SERVER_URL}/games/1`,{
+    const response = await fetch(`${SERVER_URL}/games/${game.id}`,{
     method : "PUT",
     headers: {
       "Content-Type" : "application/json"
     },
     body: JSON.stringify({countryName: guess})
   })
+  console.log(JSON.stringify({countryName: guess}))
   const guessData = await response.json();
   setReply(guessData);
   }
@@ -61,16 +75,22 @@ const PlayerContainer = () => {
   //             });
   //             }
 
+
+  
+
+
+
   const createNewGame = async (newPlayerName) => {
       // Step 1: Create a new player
+     
+      
       const createNewPlayer = await fetch(`${SERVER_URL}/players`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name: newPlayerName }),
-      });
+      });      
       const player = await createNewPlayer.json();
       
-
       // Step 2: Create a new game for the player
       const createGameResponse = await fetch(
         `${SERVER_URL}/games?playerId=${player.id}`,
@@ -89,6 +109,10 @@ const PlayerContainer = () => {
       setPlayers([...players,updatedPlayer])
       console.log(replyObj);
   };
+
+  useEffect(()=> {
+     getLatestGame();
+  }, [players])
 
   return (
     <>
