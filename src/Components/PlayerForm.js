@@ -26,18 +26,6 @@ const handleResetGame = (event)=>{
     event.preventDefault();
     makeAGuess(guess);
   };
-//   const resetPlayer = () =>{
-//    fetch(`${SERVER_URL}/players/1`,{
-//     method:"DELETE",
-//     headers:{"Content-Type": "application/json"}
-//   })
-// }
-//   const resetGame = () =>{
-//    fetch(`${SERVER_URL}/games/1`,{
-//     method:"DELETE",
-//     headers:{"Content-Type": "application/json"}
-//   })
-// }
 
   return (
     <>
