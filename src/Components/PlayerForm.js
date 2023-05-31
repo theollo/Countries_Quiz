@@ -56,17 +56,18 @@ const handleResetGame = (event)=>{
         <button type="submit" id="startButton">START</button> 
       </form>
       <form id="guess">
-      <input
+      <input id="guessInput"
           type = "text"
           name = "guess"
           placeholder="Enter your guess"
           value = {guess}
           onChange={handleGuessChange}/>
-          <button onClick = {handleResetGame}>Reset Game</button>
           <button onClick={handleGuessSumbit}>Submit your guess</button>
         
       </form>
+      <button onClick = {handleResetGame} id="reset">Reset Game</button>
       <Reply reply={reply} />
+
     </>
   );
 };

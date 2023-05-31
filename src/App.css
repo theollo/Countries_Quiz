@@ -53,19 +53,49 @@ body {
   transform: translate(-50%, -50%);
   border: 5px solid;
 }
-/* #guess{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-} */
 
 #guess{
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 90%;
+  left: 25%;
   transform: translate(-50%, -50%);
+  height: 300px;
+  width: 300px;
+
   
 
  /* display:none; */
 }
+
+#guessInput{
+  height: 75px;
+  width: 800px;
+  font-size: 200%;
+  /* display:none; */
+  
+}
+
+#reset{
+  display: flex;
+  position: absolute;
+  top: 10%;
+  left: 90%;
+  transform: translate(-50%, -50%);
+}
+
+#message{
+  position: absolute;
+  top: 75%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+  height: 50%;
+  width: 200%;
+  background-color: #ffffff;
+  border: 10px solid #000000ef;
+  padding: 15px;
+  font-size: 250%;
+
+  
+
+}
+
