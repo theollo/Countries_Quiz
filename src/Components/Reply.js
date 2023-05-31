@@ -7,9 +7,9 @@ const Reply = ({ reply }) => {
 
   return (
     <>
-      <p id="message">{reply.message}? </p>
-      <p id="score">Score:{reply.currentScore}/{reply.maxScore}</p>
-      <p id="penalty">Penalty: {reply.penalty}</p>
+      <p id="message">{reply.message}</p>
+      <p id="score">SCORE: {reply.currentScore}/{reply.maxScore}</p>
+      <p id="penalty">PENALTY: {reply.penalty}/5</p>
     </>
   );
 };

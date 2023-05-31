@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap');
+
 #title{
     background-color: #169ddc7d;
     color: #ffffff;
@@ -56,11 +58,12 @@ body {
 
 #guess{
   position: absolute;
-  top: 90%;
+  top: 92%;
   left: 25%;
   transform: translate(-50%, -50%);
   height: 300px;
   width: 300px;
+  display: flex;
 
   
 
@@ -68,34 +71,103 @@ body {
 }
 
 #guessInput{
-  height: 75px;
-  width: 800px;
+  height: 28px;
+  width: 750px;
   font-size: 200%;
   /* display:none; */
-  
+  background-color: #ffffff;
+  border: 5px solid #000000ef;
+  padding: 15px; 
+  display: flex;
 }
 
 #reset{
-  display: flex;
   position: absolute;
-  top: 10%;
-  left: 90%;
+  top: 15%;
+  left: 80%;
   transform: translate(-50%, -50%);
+
+  height: 75px;
+  width: 170px;
+
+  border: 5px solid #000000ef;
+  padding: 5px; 
+  background-color: rgba(228, 24, 24, 0.987);
+  color: black;
+  
+  font-size: x-large;
+  font-family: Kanit;
+  font-weight: 750;
+  text-align: center;
 }
 
 #message{
   position: absolute;
-  top: 75%;
-  left: 25%;
+  top: 65%;
+  left: 42%;
   transform: translate(-50%, -50%);
-  height: 50%;
-  width: 200%;
+  height: 80px;
+  width: 47%;
   background-color: #ffffff;
-  border: 10px solid #000000ef;
-  padding: 15px;
-  font-size: 250%;
+  border: 5px solid #000000ef;
+  padding: 15px; 
+  font-size: 225%;
+  font-weight: bold;
+  text-align: center;
+}
 
-  
+#guessSubmit {
+  position: absolute;
+  top: 11.5%;
+  left: 151%; /*293%;*/
+  transform: translate(-50%, -50%);
+  height: 68px;
+  width: 57%;
+  font-size: xx-large;
+  background-color: rgb(48, 214, 7);
+  border: 5px solid #000000ef;
+  padding: 5px; 
+  text-align: center;
+  font-family: Kanit;
+}
+
+#score {
+  border: 10px solid #000000ef;
+  padding: 15px; 
+  background-color:rgb(48, 214, 7);
+  border-style:double;
+  color: black;
+
+  position: absolute;
+  top: 65%;
+  left: 80%;
+  transform: translate(-50%, -50%);
+
+  height: 30px;
+  width: 200px;
+  font-size: x-large;
+  font-family: Kanit;
+  font-weight: 750;
+  text-align: center;
 
 }
 
+#penalty {
+  border: 10px solid #000000ef;
+  padding: 15px; 
+  background-color: rgba(228, 24, 24, 0.987);
+  color: black;
+  border-style:double;
+
+  position: absolute;
+  top: 79%;
+  left: 80%;
+  transform: translate(-50%, -50%);
+
+  height: 30px;
+  width: 200px;
+  font-size: x-large;
+  font-family: Kanit;
+  font-weight: 750;
+  text-align: center;
+}

@@ -62,10 +62,10 @@ const handleResetGame = (event)=>{
           placeholder="Enter your guess"
           value = {guess}
           onChange={handleGuessChange}/>
-          <button onClick={handleGuessSumbit}>Submit your guess</button>
+          <button onClick={handleGuessSumbit} id="guessSubmit">GUESS</button>
         
       </form>
-      <button onClick = {handleResetGame} id="reset">Reset Game</button>
+      <button onClick = {handleResetGame} id="reset">RESET GAME</button>
       <Reply reply={reply} />
 
     </>
