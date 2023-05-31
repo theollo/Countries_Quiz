@@ -44,17 +44,18 @@ const handleResetGame = (event)=>{
 
   return (
     <>
-      <form onSubmit={handleFormSubmit}>
-        <input
+      <h1 id="title">Countries Quiz</h1>
+      <form onSubmit={handleFormSubmit} id="username">
+        <input id="userInput"
           type="text"
           name="name"
           placeholder="Enter Username"
           value={newPlayerName}
           onChange={handleChange}
         />
-        <button type="submit">Create new player</button> 
+        <button type="submit" id="startButton">START!</button> 
       </form>
-      <form>
+      <form id="guess">
       <input
           type = "text"
           name = "guess"
