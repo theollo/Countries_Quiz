@@ -45,7 +45,7 @@ const resetAll = async() => {
      headers:{"Content-Type": "application/json"}
    })
  
-  const deletePlayer = await fetch (`${SERVER_URL}/players/${player.id}`,{
+    await fetch (`${SERVER_URL}/players/${player.id}`,{
     method:"DELETE",
     headers:{"Content-Type": "application/json"}
   })

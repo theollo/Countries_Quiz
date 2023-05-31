@@ -17,6 +17,7 @@ const handleGuessChange = (event)=>{
 
 
 const handleResetGame = (event)=>{
+  event.preventDefault();
   resetAll();
 }
 
