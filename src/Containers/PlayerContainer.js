@@ -9,9 +9,7 @@ const PlayerContainer = () => {
   const [player, setPlayer] = useState({});
   const [game, setGame] = useState({});
   const [reply, setReply] = useState(null);
-  const [continent, setContinent] = useState([]);
-  const [playerId, setPlayerId] = useState(null);
-  const [games, setGames] = useState([])
+  const [gameStarted, setGameStarted] = useState(false);
 
   const getAllPlayers = async () =>{
     const response = await fetch(`${SERVER_URL}/players`)
@@ -49,6 +47,7 @@ const resetAll = async() => {
     method:"DELETE",
     headers:{"Content-Type": "application/json"}
   })
+  setGameStarted(false)
 }
 
 
@@ -90,7 +89,7 @@ const resetAll = async() => {
       )
       const updatedPlayer = await updatedPlayerResponse.json();
       setPlayers([...players,updatedPlayer])
-      console.log(replyObj);
+      setGameStarted(true);
   };
 
   useEffect(()=> {
@@ -103,8 +102,7 @@ const resetAll = async() => {
       <Game createNewGame={createNewGame} />
       <PlayerForm
         createNewGame={createNewGame}
-        // resetGame = {resetGame}
-        // resetPlayer = {resetPlayer}
+        gameStarted = {gameStarted}
         reply={reply}
         resetAll={resetAll}
         makeAGuess = {makeAGuess}

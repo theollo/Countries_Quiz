@@ -2,10 +2,9 @@ import { useState, useEffect } from "react";
 import Reply from "./Reply";
 
 const SERVER_URL = "http://localhost:8080";
-const PlayerForm = ({ resetAll, resetGame, resetPlayer, createNewGame, reply, makeAGuess}) => {
+const PlayerForm = ({ gameStarted, resetAll, createNewGame, reply, makeAGuess}) => {
   const [newPlayerName, setNewPlayerName] = useState("");
   const [guess, setGuess]=useState("");
-  const [gameReset, setGameReset] = useState(false)
 
   const handleChange = (event) => {
     setNewPlayerName(event.target.value);
@@ -13,8 +12,6 @@ const PlayerForm = ({ resetAll, resetGame, resetPlayer, createNewGame, reply, ma
 const handleGuessChange = (event)=>{
   setGuess(event.target.value);
 }
-
-
 
 const handleResetGame = (event)=>{
   event.preventDefault();
@@ -44,6 +41,8 @@ const handleResetGame = (event)=>{
 
   return (
     <>
+    {!gameStarted ?
+    (<>
       <h1 id="title">Countries Quiz</h1>
       <form onSubmit={handleFormSubmit} id="username">
         <input id="userInput"
@@ -55,6 +54,7 @@ const handleResetGame = (event)=>{
         />
         <button type="submit" id="startButton">START</button> 
       </form>
+      </>) : (<>
       <form id="guess">
       <input id="guessInput"
           type = "text"
@@ -62,11 +62,11 @@ const handleResetGame = (event)=>{
           placeholder="Enter your guess"
           value = {guess}
           onChange={handleGuessChange}/>
-          <button onClick={handleGuessSumbit}>Submit your guess</button>
-        
+          <button onClick={handleGuessSumbit}>Submit your guess</button> 
       </form>
       <button onClick = {handleResetGame} id="reset">Reset Game</button>
-      <Reply reply={reply} />
+      <Reply reply={reply} /> 
+      </> )}
 
     </>
   );

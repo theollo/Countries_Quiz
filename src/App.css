@@ -7,7 +7,7 @@
     letter-spacing: 2px;
     font-size: 450%;
     margin-top: 35%;
-    display: none;
+
   }
 
 body {
@@ -33,7 +33,7 @@ body {
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-weight: 550;
   background-color: #ffffffe1;
-  display: none;
+
 }
 
 #startButton{
@@ -43,7 +43,7 @@ body {
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-weight: 700;
   background-color: rgb(48, 214, 7);
-  display: none;
+
 }
 
 #username{
