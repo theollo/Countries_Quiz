@@ -22,9 +22,10 @@ const handleResetGame = (event)=>{
     event.preventDefault();
     createNewGame(newPlayerName);
   };
-  const handleGuessSumbit = (event) => {
+  const handleGuessSubmit = (event) => {
     event.preventDefault();
     makeAGuess(guess);
+    setGuess("");
   };
 
   return (
@@ -50,8 +51,9 @@ const handleResetGame = (event)=>{
           placeholder="Enter your guess"
           value = {guess}
           onChange={handleGuessChange}/>
-          <button onClick={handleGuessSumbit} id="guessSubmit">GUESS</button>
+          <button onClick={handleGuessSubmit} id="guessSubmit">GUESS</button>
       </form>
+      <img id="mapImage" src="https://www.pngfind.com/pngs/m/59-591887_world-map-clip-art-world-map-outline-png.png"></img>
       <Reply reply={reply} /> 
       </> )}
       <button onClick = {handleResetGame} id="reset">RESET GAME</button>

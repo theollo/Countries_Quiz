@@ -9,7 +9,6 @@
     letter-spacing: 2px;
     font-size: 450%;
     margin-top: 35%;
-
   }
 
 body {
@@ -35,7 +34,6 @@ body {
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-weight: 550;
   background-color: #ffffffe1;
-
 }
 
 #startButton{
@@ -45,7 +43,6 @@ body {
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-weight: 700;
   background-color: rgb(48, 214, 7);
-
 }
 
 #username{
@@ -64,17 +61,12 @@ body {
   height: 300px;
   width: 300px;
   display: flex;
-
-  
-
- /* display:none; */
 }
 
 #guessInput{
   height: 28px;
   width: 750px;
   font-size: 200%;
-  /* display:none; */
   background-color: #ffffff;
   border: 5px solid #000000ef;
   padding: 15px; 
@@ -170,4 +162,12 @@ body {
   font-family: Kanit;
   font-weight: 750;
   text-align: center;
+}
+
+#mapImage {
+  position:absolute;
+  top: 30%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+
 }
