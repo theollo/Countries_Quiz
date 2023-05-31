@@ -53,7 +53,7 @@ const handleResetGame = (event)=>{
           value={newPlayerName}
           onChange={handleChange}
         />
-        <button type="submit" id="startButton">START!</button> 
+        <button type="submit" id="startButton">START</button> 
       </form>
       <form id="guess">
       <input
