@@ -64,7 +64,9 @@ const gameOver = (event) => {
           onChange={handleGuessChange}/>
           <button onClick={handleGuessSubmit} id="guessSubmit">GUESS</button>
       </form>
-      <img id="mapImage" src="https://www.pngfind.com/pngs/m/59-591887_world-map-clip-art-world-map-outline-png.png"></img>
+      <div className = "mapImage">
+      <img src = "src/world_map.png"/>
+      </div>
       <Reply reply={reply} /> 
       <button onClick = {handleResetGame} id="reset">RESET GAME</button>
       </> )}

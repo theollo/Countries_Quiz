@@ -12,7 +12,7 @@
   }
 
 body {
-  background-image: url(body-wallpaper.jpg);
+  background-image: url(backgroundforquiz\ \(4\).png);
   display:flex;
   justify-content: center;
   /* background-repeat: no-repeat;
@@ -101,12 +101,8 @@ body {
 
 #message{
   position: absolute;
-  /* top: 65%;
-  left: 42%; */
-  /* top: 28%;
-  left: 50%; */
-  top: 11%;
-  left:40%;
+  top: 65%;
+  left: 42%;
   transform: translate(-50%, -50%);
   height: 80px;
   width: 47%;
@@ -174,12 +170,13 @@ body {
   text-align: center;
 }
 
-#mapImage {
+.mapImage {
+  background-image: url(world_map.png); 
   position:absolute;
   top: 30%;
   left: 40%;
   transform: translate(-50%, -50%);
-  display:none;
+  /* display:none; */
 
 }
 
