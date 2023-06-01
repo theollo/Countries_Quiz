@@ -1,13 +1,19 @@
 import { useState } from "react";
 
 
-const Game = ({createNewGame}) => {
+const Game = ({game}) => {
     const [newMaxScore, setNewMaxScore]= useState([]);
     const [newCurrentScore, setNewCurrentScore]= useState([]);
     const [newMessage, setNewMessage]= useState([]);
     const [newPenalty, setNewPenalty]= useState([]);
 
-   
+    const gameComponents = Object.values(game).map((guess) => {
+      return <li>{game.guesses}</li>;
+    });
+    //.filter((guesses) => {
+      //   if(game.guesses==true) {
+      //     return guesses}
+      //   })
 
     return (
           <>
@@ -15,7 +21,7 @@ const Game = ({createNewGame}) => {
             <div id="guessed">
               <p>GUESSED</p>
               <ul>
-                <li>This is the li</li>
+                <li>{gameComponents}</li>
               </ul>
               
             </div>
