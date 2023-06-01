@@ -17,6 +17,7 @@ const handleGuessChange = (event)=>{
 const handleResetGame = (event)=>{
   event.preventDefault();
   resetAll();
+  window.location.reload();
 }
 
 const handleFormSubmit = (event) => {
@@ -34,7 +35,6 @@ const gameOver = (event) => {
     if (reply.penalty === 4 || reply.maxScore === (reply.currentScore +1)){
       setGameEnded(true);
     }
-
   }
 
 
@@ -64,9 +64,7 @@ const gameOver = (event) => {
           onChange={handleGuessChange}/>
           <button onClick={handleGuessSubmit} id="guessSubmit">GUESS</button>
       </form>
-      <div className = "mapImage">
-      <img src = "src/world_map.png"/>
-      </div>
+      <img id="mapImage" src = {require("../world_map.png")}/>
       <Reply reply={reply} /> 
       <button onClick = {handleResetGame} id="reset">RESET GAME</button>
       </> )}

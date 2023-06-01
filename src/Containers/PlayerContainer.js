@@ -100,7 +100,8 @@ const resetAll = async() => {
 
   return (
     <>
-      <Game game={game} />
+  
+      
       <PlayerForm
         createNewGame={createNewGame}
         gameStarted = {gameStarted}
