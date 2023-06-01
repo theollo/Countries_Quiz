@@ -10,9 +10,21 @@ const Game = ({createNewGame}) => {
    
 
     return (
-        <>
+          <>
         {/* <h1>{playerComponents}</h1> */}
-        
+            <div id="guessed">
+              <p>GUESSED</p>
+              <ul>
+                <li>This is the li</li>
+              </ul>
+              
+            </div>
+            <div id="notGuessed">
+              <p>NOT GUESSED</p>
+              <ul>
+                <li>This is the li</li>
+              </ul>
+            </div>
         
         
 

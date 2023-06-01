@@ -10,7 +10,7 @@ const Reply = ({ reply }) => {
       <p id="message">{reply.message}</p>
       <p id="score">SCORE: {reply.currentScore}/{reply.maxScore}</p>
       <p id="penalty">PENALTY: {reply.penalty}/5</p>
-    </>
+      </>
   );
 };
 

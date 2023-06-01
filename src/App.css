@@ -60,7 +60,8 @@ body {
   transform: translate(-50%, -50%);
   height: 300px;
   width: 300px;
-  display: flex;
+  /* display: flex; */
+display:none;
 }
 
 #guessInput{
@@ -70,7 +71,8 @@ body {
   background-color: #ffffff;
   border: 5px solid #000000ef;
   padding: 15px; 
-  display: flex;
+  /* display: flex; */
+  display:none;
 }
 
 #reset{
@@ -84,7 +86,7 @@ body {
 
   border: 5px solid #000000ef;
   padding: 5px; 
-  background-color: rgba(228, 24, 24, 0.987);
+  background-color: rgba(228, 24, 24, 0.728);
   color: black;
   
   font-size: x-large;
@@ -95,14 +97,18 @@ body {
 
 #message{
   position: absolute;
-  top: 65%;
-  left: 42%;
+  /* top: 65%;
+  left: 42%; */
+  /* top: 28%;
+  left: 50%; */
+  top: 11%;
+  left:40%;
   transform: translate(-50%, -50%);
   height: 80px;
   width: 47%;
   background-color: #ffffff;
   border: 5px solid #000000ef;
-  padding: 15px; 
+  padding: 10px; 
   font-size: 225%;
   font-weight: bold;
   text-align: center;
@@ -116,7 +122,7 @@ body {
   height: 68px;
   width: 57%;
   font-size: xx-large;
-  background-color: rgb(48, 214, 7);
+  background-color: rgba(48, 214, 7, 0.693);
   border: 5px solid #000000ef;
   padding: 5px; 
   text-align: center;
@@ -126,7 +132,7 @@ body {
 #score {
   border: 10px solid #000000ef;
   padding: 15px; 
-  background-color:rgb(48, 214, 7);
+  background-color:rgba(48, 214, 7, 0.7);
   border-style:double;
   color: black;
 
@@ -147,7 +153,7 @@ body {
 #penalty {
   border: 10px solid #000000ef;
   padding: 15px; 
-  background-color: rgba(228, 24, 24, 0.987);
+  background-color: rgba(228, 24, 24, 0.736);
   color: black;
   border-style:double;
 
@@ -169,5 +175,36 @@ body {
   top: 30%;
   left: 40%;
   transform: translate(-50%, -50%);
+  display:none;
 
+}
+
+#guessed{
+  position:absolute;
+  top: 55%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+  height: 60%;
+  width: 20%;
+  background-color: rgba(48, 214, 7, 0.695);
+  border: 5px solid #000000ef;
+  padding: 10px; 
+  font-size: 225%;
+  font-weight: bold;
+  text-align: center;
+}
+
+#notGuessed{
+  position:absolute;
+  top: 55%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+  height: 60%;
+  width: 20%;
+  background-color: rgba(228, 24, 24, 0.703);
+  border: 5px solid #000000ef;
+  padding: 10px; 
+  font-size: 225%;
+  font-weight: bold;
+  text-align: center;
 }

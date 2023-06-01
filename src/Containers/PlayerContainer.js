@@ -10,6 +10,9 @@ const PlayerContainer = () => {
   const [game, setGame] = useState({});
   const [reply, setReply] = useState(null);
   const [gameStarted, setGameStarted] = useState(false);
+  const [gameEnded, setGameEnded] = useState(false);
+
+  
 
   const getAllPlayers = async () =>{
     const response = await fetch(`${SERVER_URL}/players`)
