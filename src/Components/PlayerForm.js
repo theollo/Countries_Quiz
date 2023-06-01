@@ -5,8 +5,9 @@ const SERVER_URL = "http://localhost:8080";
 const PlayerForm = ({ gameStarted, resetAll, createNewGame, reply, makeAGuess}) => {
   const [newPlayerName, setNewPlayerName] = useState("");
   const [guess, setGuess]=useState("");
+  const [gameEnded, setGameEnded] = useState(false);
 
-  const handleChange = (event) => {
+const handleChange = (event) => {
     setNewPlayerName(event.target.value);
   };
 const handleGuessChange = (event)=>{
@@ -18,15 +19,25 @@ const handleResetGame = (event)=>{
   resetAll();
 }
 
-  const handleFormSubmit = (event) => {
+const handleFormSubmit = (event) => {
     event.preventDefault();
     createNewGame(newPlayerName);
   };
-  const handleGuessSubmit = (event) => {
+const handleGuessSubmit = (event) => {
     event.preventDefault();
     makeAGuess(guess);
     setGuess("");
+    gameOver();
   };
+
+const gameOver = (event) => {
+    if (reply.penalty === 4 || reply.maxScore === (reply.currentScore +1)){
+      setGameEnded(true);
+    }
+
+  }
+
+
 
   return (
     <>
@@ -44,7 +55,7 @@ const handleResetGame = (event)=>{
         <button type="submit" id="startButton">START</button> 
       </form>
       </>) : (<>
-      <form id="guess">
+      <form id = {!gameEnded ? "guess" : "guess2"}>
       <input id="guessInput"
           type = "text"
           name = "guess"
@@ -55,8 +66,9 @@ const handleResetGame = (event)=>{
       </form>
       <img id="mapImage" src="https://www.pngfind.com/pngs/m/59-591887_world-map-clip-art-world-map-outline-png.png"></img>
       <Reply reply={reply} /> 
-      </> )}
       <button onClick = {handleResetGame} id="reset">RESET GAME</button>
+      </> )}
+     
     </>
   );
 };

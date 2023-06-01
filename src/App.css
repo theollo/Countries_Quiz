@@ -64,6 +64,10 @@ body {
   display:flex;
 }
 
+#guess2{
+  display: none;
+}
+
 #guessInput{
   height: 28px;
   width: 750px;
@@ -179,7 +183,7 @@ body {
 
 }
 
-#guessed{
+/* #guessed{
   position:absolute;
   top: 55%;
   left: 25%;
@@ -192,9 +196,11 @@ body {
   font-size: 225%;
   font-weight: bold;
   text-align: center;
-}
+} */
 
-#notGuessed{
+
+
+/* #notGuessed{
   position:absolute;
   top: 55%;
   left: 55%;
@@ -208,4 +214,4 @@ body {
   font-weight: bold;
   text-align: center;
  
-}
+} */
