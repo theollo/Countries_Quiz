@@ -46,8 +46,15 @@ body {
   font-size: 150%;
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-weight: 700;
-  background-color: rgb(48, 214, 7);
+  background-color: rgba(48, 214, 7, 0.867);
   border:3px solid;
+  text-align: center;
+}
+
+#startButton:hover{
+  background-color: rgb(48, 214, 7);
+  box-shadow: 0px 0px 10px #333;
+  font-size: 151%;
 }
 
 #username{
@@ -104,6 +111,16 @@ body {
   text-align: center;
 }
 
+#reset:hover {
+  /* transform: scale(1); */
+  background:rgb(228, 24, 24);
+  /* z-index:1; */
+  box-shadow: 0px 0px 10px #333;
+  font-size: 25px;
+  height: 77px;
+  width: 172px;
+}
+
 #message{
   position: absolute;
   top: 66%;
@@ -132,6 +149,11 @@ body {
   padding: 5px; 
   text-align: center;
   font-family: Kanit;
+}
+#guessSubmit:hover{
+  background-color: rgb(48, 214, 7);
+  box-shadow: 0px 0px 10px #333;
+  font-weight: 750;
 }
 
 #score {
