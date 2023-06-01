@@ -7,8 +7,8 @@ const Game = ({game}) => {
     const [newMessage, setNewMessage]= useState([]);
     const [newPenalty, setNewPenalty]= useState([]);
 
-    const gameComponents = Object.values(game).map((guess) => {
-      return <li>{game.guesses}</li>;
+    const gameComponents = game.guesses.map((guess) => {
+      return <li>{guess.countryName}</li>;
     });
     //.filter((guesses) => {
       //   if(game.guesses==true) {
